@@ -1,0 +1,40 @@
+package com.javaclimb.music.service;
+
+import com.javaclimb.music.dao.ConsumerMapper;
+import com.javaclimb.music.domain.Consumer;
+
+import java.util.List;
+
+/**
+ * 前端用户接口
+ */
+public interface ConsumerService {
+    /*
+     * 增加
+     * */
+    public boolean insert(Consumer consumer);
+    /*
+     * 修改
+     * */
+    public boolean update(Consumer consumer);
+    /*
+     * 删除
+     * */
+    public boolean delete(Integer id);
+    /*
+     * 根据主键查询所有用户
+     * */
+    public ConsumerMapper selectByPrimaryKey (Integer id);
+    /*
+     * 查询所有用户
+     * */
+    public List<ConsumerMapper> allConsumer();
+    /**
+     * 修改密码
+     */
+    public boolean verifPassword(String username,String password);
+    /**
+     * 根据账号查询
+     */
+    public ConsumerMapper getByUsername(String username);
+}
